@@ -9,25 +9,15 @@ import javafx.scene.image.ImageView;
  */
 public class Product {
     private int id;
-    private String name;
-    private int quantity;
-    private int price;
-    private String imgName;
+    private String nombre;
+    private float precio;
+    private int existencia;
 
-    public Product(int id, String name, int quantity, int price, String imgName) {
+    public Product(int id, String nombre, float precio, int existencia) {
         this.id = id;
-        this.name = name;
-        this.quantity = quantity;
-        this.price = price;
-        this.imgName = imgName;
-    }
-    
-    public Product(int id, String name, int quantity, int price) {
-        this.id = id;
-        this.name = name;
-        this.quantity = quantity;
-        this.price = price;
-        this.imgName = "noImageFound.jpg";
+        this.nombre = nombre;
+        this.precio = precio;
+        this.existencia = existencia;
     }
 
     public int getId() {
@@ -38,35 +28,28 @@ public class Product {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
-    public int getQuantity() {
-        return quantity;
+    public float getPrecio() {
+        return precio;
     }
 
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
+    public void setPrecio(float precio) {
+        this.precio = precio;
     }
 
-    public int getPrice() {
-        return price;
+    public int getExistencia() {
+        return existencia;
     }
 
-    public void setPrice(int price) {
-        this.price = price;
+    public void setExistencia(int existencia) {
+        this.existencia = existencia;
     }
-
-    public String getImgName() {
-        return imgName;
-    }
-
-    public void setImgName(String imgName) {
-        this.imgName = imgName;
-    }
+    
 }

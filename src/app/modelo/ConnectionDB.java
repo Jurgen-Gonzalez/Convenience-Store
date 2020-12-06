@@ -282,6 +282,7 @@ public class ConnectionDB {
             return null;
         }
     }
+    
     public ArrayList<Client> getAllProducts() {
         ArrayList<Client> clients = new ArrayList<Client>();
         ResultSet clientRS;

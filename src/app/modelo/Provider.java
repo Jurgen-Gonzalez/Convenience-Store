@@ -12,6 +12,11 @@ public class Provider {
     private int monto;
     private char realizado;
 
+    public Provider(int id, String nombre) {
+        this.id = id;
+        this.nombre = nombre;
+    }
+
     public Provider(int id, String nombre, String fecha, int monto, char realizado) {
         this.id = id;
         this.nombre = nombre;

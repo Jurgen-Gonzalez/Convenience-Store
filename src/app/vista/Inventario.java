@@ -72,6 +72,9 @@ public class Inventario {
         close.getStyleClass().add("close");
         save.getStyleClass().add("save");
         close.setOnAction(e -> tab.setContent(startingPane));
+        save.setOnAction(e -> {
+            
+        });
         gp.setAlignment(Pos.CENTER);
 //        save.setOnAction(e -> register());
         

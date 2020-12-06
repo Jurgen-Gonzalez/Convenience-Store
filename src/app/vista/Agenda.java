@@ -34,10 +34,10 @@ public class Agenda {
         Date today = new Date();
         today.setTime(System.currentTimeMillis());
         System.out.println(today.getTime());
-        ObservableList<Supply> data = FXCollections.observableArrayList(
+        /*ObservableList<Supply> data = FXCollections.observableArrayList(
                 new Supply(today, new Provider("Gamesa"), 5000, null),
                 new Supply()
         );
-        tv.setItems(data);
+        tv.setItems(data);*/
     }
 }

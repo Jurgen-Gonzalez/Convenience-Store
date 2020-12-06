@@ -5,6 +5,7 @@
  */
 package convenience.store;
 
+import app.modelo.ConnectionDB;
 import app.vista.Login;
 import javafx.application.Application;
 import javafx.scene.Scene;
@@ -20,6 +21,9 @@ public class ConvenienceStore extends Application {
     public void start(Stage primaryStage) {
         Login l = new Login();
         
+        ConnectionDB db = new ConnectionDB();
+//        if(db.insertClient("General", "direccion", "telefono"))
+//            System.out.println("Se agrego a la base de datos");
         primaryStage.setTitle("Abarrotes Gonzalez");
         Scene scene = new Scene(l.loginPane(primaryStage),800,500);
         primaryStage.setScene(scene);

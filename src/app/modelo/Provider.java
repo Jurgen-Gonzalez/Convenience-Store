@@ -11,6 +11,8 @@ public class Provider {
     private String fecha;
     private int monto;
     private char realizado;
+    //Workaround for editable TableView
+    private String montoString;
 
     public Provider(int id, String nombre) {
         this.id = id;
@@ -23,6 +25,7 @@ public class Provider {
         this.fecha = fecha;
         this.monto = monto;
         this.realizado = realizado;
+        montoString = String.valueOf(monto);
     }
     public int getId() {
         return id;
@@ -31,11 +34,11 @@ public class Provider {
     public void setId(int id) {
         this.id = id;
     }
-    public String getName() {
+    public String getNombre() {
         return nombre;
     }
 
-    public void setName(String nombre) {
+    public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
@@ -63,5 +66,14 @@ public class Provider {
         this.realizado = realizado;
     }
 
+    public String getMontoString() {
+        return montoString;
+    }
+
+    public void setMontoString(String montoString) {
+        this.montoString = montoString;
+    }
+
+    
 
 }

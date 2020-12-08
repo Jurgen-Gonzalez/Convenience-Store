@@ -317,6 +317,42 @@ public class ConnectionDB {
         }
     }
         
+    //tabla suministro
+    public ArrayList<Supply> getAllStock() {
+        ArrayList<Supply> supply = new ArrayList<Supply>();
+        ResultSet supplyRS;
+        Supply supplyFound;
+        int idCliente;
+        float adeudo;
+        try {
+            con = abrir();
+            stm = con.createStatement();
+            supplyRS = stm.executeQuery("SELECT * FROM compras ");
+            if (!supplyRS.next()) {
+                System.out.println(" No se encontraron registros");
+                cerrar();
+                return null;
+            } else {
+                do {
+                    id = supplyRS.getInt("id_producto");
+                    idCliente = supplyRS.getInt("id_cliente");
+                    monto = supplyRS.getInt("monto");
+                    fecha = supplyRS.getString("fecha");
+                    adeudo = supplyRS.getFloat("adeudo");
+                    supplyFound = new Supply(id, idCliente, monto, fecha, adeudo);
+                    supply.add(supplyFound);
+                } while (supplyRS.next());
+                cerrar();
+                return supply;
+            }
+        } catch (Exception e) {
+            System.out.println("Error en la base de datos.");
+            e.printStackTrace();
+
+            return null;
+        }
+    }
+    //tabla compras
     public ArrayList<Supply> getAllSupply() {
         ArrayList<Supply> supply = new ArrayList<Supply>();
         ResultSet supplyRS;

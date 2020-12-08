@@ -67,7 +67,7 @@ public class Inventario {
         if(allProviders != null){
             ArrayList<String> providersListString = new ArrayList<String>();
             for (Provider provider : allProviders) {
-                providersListString.add(provider.getName());
+                providersListString.add(provider.getNombre());
             }
             providersList = FXCollections.observableArrayList(providersListString);
         } else 

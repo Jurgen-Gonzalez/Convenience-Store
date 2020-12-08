@@ -9,15 +9,22 @@ import javafx.scene.image.ImageView;
  */
 public class Product {
     private int id;
+    private int id_proveedor;
     private String nombre;
     private float precio;
     private int existencia;
+    //Workaround for the JavaFX TableView edit cell
+    private String precioString;
+    private String existenciaString;
 
-    public Product(int id, String nombre, float precio, int existencia) {
+    public Product(int id, int id_proveedor, String nombre, float precio, int existencia) {
         this.id = id;
+        this.id_proveedor = id_proveedor;
         this.nombre = nombre;
         this.precio = precio;
         this.existencia = existencia;
+        precioString = String.valueOf(precio);
+        existenciaString = String.valueOf(existencia);
     }
 
     public int getId() {
@@ -51,5 +58,30 @@ public class Product {
     public void setExistencia(int existencia) {
         this.existencia = existencia;
     }
+    
+    public int getId_proveedor() {
+        return id_proveedor;
+    }
+
+    public void setId_proveedor(int id_proveedor) {
+        this.id_proveedor = id_proveedor;
+    }
+
+    public String getPrecioString() {
+        return String.valueOf(precio);
+    }
+
+    public void setPrecioString(String precioString) {
+        this.precioString = precioString;
+    }
+
+    public String getExistenciaString() {
+        return String.valueOf(existencia);        
+    }
+
+    public void setExistenciaString(String existenciaString) {
+        this.existenciaString = existenciaString;
+    }
+    
     
 }

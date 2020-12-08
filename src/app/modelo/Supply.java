@@ -1,61 +1,63 @@
 package app.modelo;
 
-import java.util.ArrayList;
-import java.util.Date;
-
 /**
  *
  * @author wrath
  */
 public class Supply {
-    private Date day;
-    private Provider provider;
-    private double amount;
-    private ArrayList<Product> products;
+    private int producto;
+    private int cliente;
+    private int monto;
+    private String fecha;
+    private float adeudo;
+
+    public Supply(int producto, int cliente, int monto, String fecha, float adeudo) {
+        this.producto = producto;
+        this.cliente = cliente;
+        this.monto = monto;
+        this.fecha = fecha;
+        this.adeudo = adeudo;
+    }
+
+    public int getProducto() {
+        return producto;
+    }
+
+    public void setProducto(int producto) {
+        this.producto = producto;
+    }
+
+    public int getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(int cliente) {
+        this.cliente = cliente;
+    }
+
+
+    public int getMonto() {
+        return monto;
+    }
+
+    public void setMonto(int monto) {
+        this.monto = monto;
+    }
+    public String getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(String fecha) {
+        this.fecha = fecha;
+    }
+
+    public float getAdeudo() {
+        return adeudo;
+    }
+
+    public void setAdeudo(float adeudo) {
+        this.adeudo = adeudo;
+    }
     
-    public Supply(){
         
-    }
-    
-    public Supply(Date day, Provider provider, double amount, 
-            ArrayList<Product> products) {
-        this.day = day;
-        this.provider = provider;
-        this.amount = amount;
-        this.products = products;
-    }
-
-    public Date getDay() {
-        return day;
-    }
-
-    public void setDay(Date day) {
-        this.day = day;
-    }
-
-    public Provider getProvider() {
-        return provider;
-    }
-
-    public void setProvider(Provider provider) {
-        this.provider = provider;
-    }
-
-    public double getAmount() {
-        return amount;
-    }
-
-    public void setAmount(double amount) {
-        this.amount = amount;
-    }
-
-    public ArrayList<Product> getProducts() {
-        return products;
-    }
-
-    public void setProducts(ArrayList<Product> products) {
-        this.products = products;
-    }
-    
-    
 }

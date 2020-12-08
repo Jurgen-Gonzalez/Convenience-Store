@@ -72,3 +72,13 @@
     -fx-text-fill: white;
 }
 
+.delete{
+    -fx-background-color: red;
+    -fx-text-fill: black;
+    -fx-border-color: black;
+}
+.delete:hover{
+    -fx-background-color: #A2A2A2;
+    -fx-text-fill: white;
+}
+

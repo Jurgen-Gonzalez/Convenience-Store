@@ -82,3 +82,22 @@
     -fx-text-fill: white;
 }
 
+/*Product Buttons*/
+.product{
+    /*-fx-padding: 1 0 1 0;
+    -fx-padding: 5px;
+    -fx-border-insets: 5px;
+    -fx-background-insets: 5px;
+    -fx-alignment: center;*/
+}
+#price, #price:disabled{
+    -fx-opacity: 1.0 ;
+    -fx-text-fill: blue;
+}
+#quantity, #price:disabled{
+    -fx-opacity: 1.0 ;
+    -fx-text-fill: green;
+}
+#prodName{
+    -fx-opacity: 1.0 ;
+}

@@ -65,14 +65,17 @@ public class Agenda {
                 String[] dayArray = sdf.format(c.getTime()).split("-");
                 String dayReverse = dayArray[2] + "-" + dayArray[1] + "-" + dayArray[0];
                 tempProviders.add(new Provider(1, "", dayReverse, 0, 'N'));
-
+                boolean flag = false;
                 for (Provider provider : providers) {
                     if (provider.getFecha().equals(sdf.format(c.getTime()))) {
                         provider.setFecha(dayReverse);
                         tv.getItems().add(provider);
-                    } else {
-                        tv.getItems().add(tempProviders.get(tempProviders.size() - 1));
+                        flag = true;
+                        break;
                     }
+                }
+                if (!flag) {
+                    tv.getItems().add(tempProviders.get(tempProviders.size() - 1));
                 }
             }
         } else {
@@ -95,7 +98,7 @@ public class Agenda {
             ArrayList<Provider> providers2 = db.getAllProviders();
             for (Provider provider : providers2) {
                 if (provider.getNombre().trim().equals(e.getNewValue())) {
-                    db.updateProvider(provider.getId(), provider.getNombre(), 
+                    db.updateProvider(provider.getId(), provider.getNombre(),
                             dayReverse, provider.getMonto(), 'N');
                 }
             }
@@ -105,8 +108,8 @@ public class Agenda {
             ArrayList<Provider> providers2 = db.getAllProviders();
             for (Provider provider : providers2) {
                 if (provider.getNombre().trim().equals(p.getNombre().trim())) {
-                    db.updateProvider(provider.getId(), provider.getNombre(), 
-                            provider.getFecha(), 
+                    db.updateProvider(provider.getId(), provider.getNombre(),
+                            provider.getFecha(),
                             Integer.parseInt(e.getNewValue()), 'N');
                 }
             }

@@ -418,6 +418,34 @@ public class ConnectionDB {
         }
     }
     
+    public User getUser(int id) {
+        User user;
+        ResultSet productRS;
+        String contrasena;
+        try {
+            con = abrir();
+            stm = con.createStatement();
+            productRS = stm.executeQuery("SELECT * FROM usuarios WHERE "+
+                    "id_usuario="+id);
+            if (!productRS.next()) {
+                System.out.println(" No se encontraron registros");
+                cerrar();
+                return null;
+            } else {
+                id = productRS.getInt("id_usuario");
+                nombre = productRS.getString("nombre_usuario");
+                contrasena = productRS.getString("contrasena");
+                user = new User(id,  nombre, contrasena);
+                cerrar();
+                return user;
+            }
+        } catch (Exception e) {
+            System.out.println("Error en la base de datos.");
+            e.printStackTrace();
+            return null;
+        }
+    }
+    
     public Provider getProvider(String name) {//Para el select one
         Provider provider = null;
         ResultSet providerRS;
